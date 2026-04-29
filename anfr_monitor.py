@@ -44,13 +44,15 @@ BRANDS = {
 # ==========================
 def fetch_data():
     all_rows = []
-    limit = 100
-    offset = 0
+
+    # 1차: 구버전 D4C API 사용
+    rows = 100
+    start = 0
 
     while True:
         url = (
-            f"https://data.anfr.fr/api/explore/v2.1/catalog/datasets/"
-            f"{DATASET}/records?limit={limit}&offset={offset}"
+            f"https://data.anfr.fr/d4c/api/records/1.0/search/"
+            f"?dataset={DATASET}&rows={rows}&start={start}"
         )
 
         print("시도:", url)
@@ -58,20 +60,23 @@ def fetch_data():
         print("status:", r.status_code)
 
         if r.status_code != 200:
-            raise Exception(f"ANFR API 실패: {r.status_code}")
+            raise Exception(f"ANFR D4C API 실패: {r.status_code}")
 
         data = r.json()
-        results = data.get("results", [])
+        records = data.get("records", [])
 
-        if not results:
+        if not records:
             break
 
-        all_rows.extend(results)
+        for rec in records:
+            fields = rec.get("fields", {})
+            if fields:
+                all_rows.append(fields)
 
-        if len(results) < limit:
+        if len(records) < rows:
             break
 
-        offset += limit
+        start += rows
 
     if not all_rows:
         raise Exception("ANFR 데이터가 비어 있습니다.")
