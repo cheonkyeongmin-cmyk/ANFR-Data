@@ -2,10 +2,11 @@ name: ANFR Daily Monitor
 
 on:
   schedule:
-    # GitHub Actions는 UTC 기준
-    # 한국시간 07:00 = UTC 22:00 (전날)
     - cron: "0 22 * * *"
-  workflow_dispatch:   # 수동 실행 버튼
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   run:
@@ -31,9 +32,8 @@ jobs:
         run: |
           python anfr_monitor.py
 
-      - name: 결과 업로드 (옵션)
+      - name: 결과 업로드
         uses: actions/upload-artifact@v4
         with:
           name: anfr-report
-          path: |
-            report.html
+          path: report.html
