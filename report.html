@@ -8,6 +8,7 @@
             font-family: Arial, "Malgun Gothic", sans-serif;
             margin: 24px;
             line-height: 1.5;
+            color: #222;
         }
         h2 {
             margin-bottom: 12px;
@@ -22,6 +23,7 @@
             border: 1px solid #ccc;
             padding: 8px;
             font-size: 14px;
+            text-align: center;
         }
         th {
             background: #f2f2f2;
@@ -32,166 +34,5243 @@
             border: 1px solid #ddd;
             margin-bottom: 20px;
         }
+        .updated {
+            background: #fff2a8;
+            font-weight: bold;
+        }
+        .hot {
+            background: #fff7d6;
+            font-weight: bold;
+        }
+        .delta {
+            color: #555;
+            font-size: 12px;
+        }
+        .danger {
+            color: #d00000;
+            font-weight: bold;
+        }
+        .note {
+            color: #666;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
-    <h2>ANFR 업데이트 없음</h2>
+    <h2>🔥 ANFR 업데이트 있음</h2>
 
     <div class="box">
-        <p><b>실행 시각:</b> 2026-04-29 13:50:06 KST</p>
-        <p><b>전체 확인 건수:</b> 583</p>
-        <p><b>신규/변경 건수:</b> 0</p>
-        <p>기존 저장 데이터와 비교한 결과 신규/변경 항목이 없습니다.</p>
+        <p><b>실행 시각:</b> 2026-04-29 14:03:28 KST</p>
+        <p><b>현재 전체 데이터:</b> 1225건</p>
+        <p><b>신규/변경 건수:</b> 642건</p>
+        <p>신규/변경 항목 642건이 확인되었습니다.</p>
+        <p class="note">괄호 안 숫자는 previous_data.csv 기준 어제 대비 증감입니다.</p>
     </div>
 
-    <h3>신규/변경 항목</h3>
+    <h3>📈 요약 현황</h3>
     <table>
         <tr>
-            <th>Date</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Status</th>
-            <th>Key</th>
+            <th>구분</th>
+            <th>전체 건수</th>
+            <th>적합</th>
+            <th>부적합</th>
+            <th>확인필요</th>
+        </tr>
+        
+        <tr class='hot'>
+            <td><b>전체</b></td>
+            <td>1225 <span class="delta">(+642)</span></td>
+            <td>1150 <span class="delta">(+593)</span></td>
+            <td>75 <span class="delta danger">(+49)</span></td>
+            <td>0 <span class="delta">(0)</span></td>
         </tr>
         
         <tr>
-            <td colspan="5" style="text-align:center;">신규/변경 업데이트가 없습니다.</td>
+            <td><b>Samsung</b></td>
+            <td>162 <span class="delta">(0)</span></td>
+            <td>159 <span class="delta">(0)</span></td>
+            <td>3 <span class="delta danger">(0)</span></td>
+            <td>0 <span class="delta">(0)</span></td>
+        </tr>
+        
+        <tr>
+            <td><b>Apple</b></td>
+            <td>36 <span class="delta">(0)</span></td>
+            <td>34 <span class="delta">(0)</span></td>
+            <td>2 <span class="delta danger">(0)</span></td>
+            <td>0 <span class="delta">(0)</span></td>
+        </tr>
+        
+        <tr>
+            <td><b>Xiaomi</b></td>
+            <td>53 <span class="delta">(0)</span></td>
+            <td>46 <span class="delta">(0)</span></td>
+            <td>7 <span class="delta danger">(0)</span></td>
+            <td>0 <span class="delta">(0)</span></td>
+        </tr>
+        
+        <tr>
+            <td><b>Oppo</b></td>
+            <td>40 <span class="delta">(0)</span></td>
+            <td>40 <span class="delta">(0)</span></td>
+            <td>0 <span class="delta danger">(0)</span></td>
+            <td>0 <span class="delta">(0)</span></td>
+        </tr>
+        
+        <tr>
+            <td><b>Huawei</b></td>
+            <td>64 <span class="delta">(0)</span></td>
+            <td>63 <span class="delta">(0)</span></td>
+            <td>1 <span class="delta danger">(0)</span></td>
+            <td>0 <span class="delta">(0)</span></td>
         </tr>
         
     </table>
 
-    <h3>현재 데이터 요약</h3>
+    <h3>🔥 신규/변경 업데이트 항목</h3>
     <table>
         <tr>
+            <th>표시</th>
+            <th>Date</th>
             <th>Brand</th>
+            <th>Model</th>
             <th>Status</th>
-            <th>Count</th>
         </tr>
         
-        <tr>
-            <td>Apple</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-01</td>
+            <td>Unknown</td>
+            <td>TORCH 9810</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-01</td>
+            <td>Unknown</td>
+            <td>EXPLORER</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-26</td>
+            <td>Unknown</td>
+            <td>OT-908F</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-26</td>
+            <td>Unknown</td>
+            <td>TORCH 9860</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-26</td>
+            <td>Unknown</td>
+            <td>A250</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-26</td>
+            <td>Unknown</td>
+            <td>A170</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-26</td>
+            <td>Unknown</td>
+            <td>VIEWTY SMILE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-26</td>
+            <td>Unknown</td>
+            <td>MINIMI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-27</td>
+            <td>Unknown</td>
+            <td>EVO 3D</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-27</td>
+            <td>Unknown</td>
+            <td>116</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-27</td>
+            <td>Unknown</td>
+            <td>122</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-01-27</td>
+            <td>Unknown</td>
+            <td>132 (ZTE F1100)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-02</td>
+            <td>Unknown</td>
+            <td>OT-990</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-14</td>
+            <td>Unknown</td>
+            <td>BOLD 9900</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-14</td>
+            <td>Unknown</td>
+            <td>DALLAS (ZTE GR250)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-16</td>
+            <td>Unknown</td>
+            <td>KAWA</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-21</td>
+            <td>Unknown</td>
+            <td>STARNAUTE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-29</td>
+            <td>Unknown</td>
+            <td>ALLEGRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-14</td>
+            <td>Unknown</td>
+            <td>OT585</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-14</td>
+            <td>Unknown</td>
+            <td>GX 991</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-14</td>
+            <td>Unknown</td>
+            <td>RACER 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-15</td>
+            <td>Unknown</td>
+            <td>EXTREM</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-20</td>
+            <td>Unknown</td>
+            <td>PRADA P-940</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-21</td>
+            <td>Unknown</td>
+            <td>WINDOWS PHONE INTERNET 7</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-21</td>
+            <td>Unknown</td>
+            <td>STARTEXT</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-28</td>
+            <td>Unknown</td>
+            <td>OT-355</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-28</td>
+            <td>Unknown</td>
+            <td>OT-602</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-28</td>
+            <td>Unknown</td>
+            <td>1150 LS</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-09-04</td>
+            <td>Unknown</td>
+            <td>T-385-B WIFI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-04-26</td>
+            <td>Unknown</td>
+            <td>C 360</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-04-26</td>
+            <td>Unknown</td>
+            <td>152</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-05-25</td>
+            <td>Unknown</td>
+            <td>ONE X</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-05-31</td>
+            <td>Unknown</td>
+            <td>TACTILE MESSAGING</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-06</td>
+            <td>Unknown</td>
+            <td>OT-710</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-06</td>
+            <td>Unknown</td>
+            <td>PEARL 3G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-06-27</td>
+            <td>Unknown</td>
+            <td>ORANGE AZ210</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-06-27</td>
+            <td>Unknown</td>
+            <td>OPTIMUS L3 E400</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-06-07</td>
+            <td>Unknown</td>
+            <td>MOBILE SENIOR INO-SM6380</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-03-08</td>
+            <td>Unknown</td>
+            <td>PI 728F TYPE W02</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-11-08</td>
+            <td>Unknown</td>
+            <td>DESIRE C</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-02-09</td>
+            <td>Unknown</td>
+            <td>OT 665</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-10-09</td>
+            <td>Unknown</td>
+            <td>BLACK STAR</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-11-09</td>
+            <td>Unknown</td>
+            <td>CURVE 9360</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-11-09</td>
+            <td>Unknown</td>
+            <td>CURVE 9320</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-09-25</td>
+            <td>Unknown</td>
+            <td>TITAN</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-10-23</td>
+            <td>Unknown</td>
+            <td>OT 720D</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-10-23</td>
+            <td>Unknown</td>
+            <td>ONYX PEARL</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-10-24</td>
+            <td>Unknown</td>
+            <td>OT282</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-10-24</td>
+            <td>Unknown</td>
+            <td>OT282</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-11-13</td>
+            <td>Unknown</td>
+            <td>OT 292</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2012-11-13</td>
+            <td>Unknown</td>
+            <td>EASY PHONE 605</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-01-22</td>
+            <td>Unknown</td>
+            <td>8S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-01-22</td>
+            <td>Unknown</td>
+            <td>OPTIMUS LG-P760</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-01-22</td>
+            <td>Unknown</td>
+            <td>STARNAUTE II BY SFR</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-14</td>
+            <td>Unknown</td>
+            <td>WINDOWS PHONE 8X</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-19</td>
+            <td>Unknown</td>
+            <td>CLOUDMOBILE S500</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-19</td>
+            <td>Unknown</td>
+            <td>EASY PHONE 612</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-19</td>
+            <td>Unknown</td>
+            <td>CINK SLIM</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>LIQUID Z110 DUO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>OT-358 TRIBE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>OT-506</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>SMARTPHONE 3.0</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>PROG 95D</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>PROA680</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-21</td>
+            <td>Unknown</td>
+            <td>PROX7WB</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>LIQUID GALLANT DUO E350</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>Z 110 DUO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>EXPLORER</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>TELL ME F210</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>X-VIEW 2 TH-1129MW</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>X-LINK 4.0 TH-1127MW</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-28</td>
+            <td>Unknown</td>
+            <td>MINZ</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-06-04</td>
+            <td>Unknown</td>
+            <td>OT-810</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-06-04</td>
+            <td>Unknown</td>
+            <td>OT-995</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-06-04</td>
+            <td>Unknown</td>
+            <td>OT-217</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-06-04</td>
+            <td>Unknown</td>
+            <td>EASY 506</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-06-04</td>
+            <td>Unknown</td>
+            <td>TH 1035M</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-07-04</td>
+            <td>Unknown</td>
+            <td>ONE XL</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-07-04</td>
+            <td>Unknown</td>
+            <td>OPTIMUS L3 II E435</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-03-05</td>
+            <td>Unknown</td>
+            <td>EASY 515</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-05</td>
+            <td>Unknown</td>
+            <td>LIQUID Z2 DUO/Z120</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-05</td>
+            <td>Unknown</td>
+            <td>Q10</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-05</td>
+            <td>Unknown</td>
+            <td>ONE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-22</td>
+            <td>Unknown</td>
+            <td>Z 10</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-22</td>
+            <td>Unknown</td>
+            <td>OPTIMUS G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-24</td>
+            <td>Unknown</td>
+            <td>OT 232</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-24</td>
+            <td>Unknown</td>
+            <td>PRO 881A</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-24</td>
+            <td>Unknown</td>
+            <td>PRO 1021</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-24</td>
+            <td>Unknown</td>
+            <td>OUTDOOR T180 BARRIER</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-30</td>
+            <td>Unknown</td>
+            <td>STARTRAIL III BY SFR</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-05-30</td>
+            <td>Unknown</td>
+            <td>STARADDICT II PLUS BY SFR</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-07</td>
+            <td>Unknown</td>
+            <td>B25</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-07</td>
+            <td>Unknown</td>
+            <td>TM 200 COSI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-02-07</td>
+            <td>Unknown</td>
+            <td>G/R 237M</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-07-29</td>
+            <td>Unknown</td>
+            <td>ONE SV</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-03-12</td>
+            <td>Unknown</td>
+            <td>OT-358</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-03-12</td>
+            <td>Unknown</td>
+            <td>123</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2013-03-12</td>
+            <td>Unknown</td>
+            <td>262</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-19</td>
+            <td>Unknown</td>
+            <td>OZZY FUSHIA LS</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-19</td>
+            <td>Unknown</td>
+            <td>LUBI 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-20</td>
+            <td>Unknown</td>
+            <td>ONE TOUCH IDOL S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-20</td>
+            <td>Unknown</td>
+            <td>G2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-27</td>
+            <td>Unknown</td>
+            <td>CONNECT 4.7</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-27</td>
+            <td>Unknown</td>
+            <td>SMART CONNECT KPSO1-10-CT</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-03</td>
+            <td>Unknown</td>
+            <td>SURF SMART X352</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-03</td>
+            <td>Unknown</td>
+            <td>MIAMI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-03-19</td>
+            <td>Unknown</td>
+            <td>ULTYM 4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-03-19</td>
+            <td>Unknown</td>
+            <td>OPTIMUS F6</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-03-20</td>
+            <td>Unknown</td>
+            <td>DARKNIGHT HELL</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-09-04</td>
+            <td>Unknown</td>
+            <td>AM X200</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-15</td>
+            <td>Unknown</td>
+            <td>BS-451 AURIGA MOBIWIRE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-15</td>
+            <td>Unknown</td>
+            <td>BS-402 BLADE Q MINI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-15</td>
+            <td>Unknown</td>
+            <td>T580</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-15</td>
+            <td>Unknown</td>
+            <td>Q.4812</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-16</td>
+            <td>Unknown</td>
+            <td>W 757</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-05-13</td>
+            <td>Unknown</td>
+            <td>SMART 5 (Carrefour CMB501)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-05-22</td>
+            <td>Unknown</td>
+            <td>OPTIMUS L4 II E440</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-07-07</td>
+            <td>Unknown</td>
+            <td>WAX</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-07-07</td>
+            <td>Unknown</td>
+            <td>RAINBOW</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-07-15</td>
+            <td>Unknown</td>
+            <td>ULTYM 5 G535-L11</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-08</td>
+            <td>Unknown</td>
+            <td>RACE MAX Q X530</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-10-08</td>
+            <td>Unknown</td>
+            <td>LIBERTO 810</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-08-27</td>
+            <td>Unknown</td>
+            <td>TROOPER X5.0</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-08-27</td>
+            <td>Unknown</td>
+            <td>ANDY AZ4.5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-04-09</td>
+            <td>Unknown</td>
+            <td>CONNECT 5.3</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-09-15</td>
+            <td>Unknown</td>
+            <td>ONE TOUCH IDOL 2 MINIS S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-09-16</td>
+            <td>Unknown</td>
+            <td>ONE TOUCH 5050X POP S3</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-09-16</td>
+            <td>Unknown</td>
+            <td>45 HELIUM 4G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-09-23</td>
+            <td>Unknown</td>
+            <td>MINI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-09-24</td>
+            <td>Unknown</td>
+            <td>STARXTREM 2 (ALCATEL 705 OY)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-10-16</td>
+            <td>Unknown</td>
+            <td>GOA</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-07-11</td>
+            <td>Unknown</td>
+            <td>IGGY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-07-11</td>
+            <td>Unknown</td>
+            <td>DARKMOON</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-11-13</td>
+            <td>Unknown</td>
+            <td>V33I</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-11-13</td>
+            <td>Unknown</td>
+            <td>Ice-Fun PI001</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-12</td>
+            <td>Unknown</td>
+            <td>40 Titanium</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-12</td>
+            <td>Unknown</td>
+            <td>HS-U912</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2014-02-12</td>
+            <td>Unknown</td>
+            <td>E500</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-01</td>
+            <td>Unknown</td>
+            <td>W627</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-01</td>
+            <td>Unknown</td>
+            <td>DESIRE 620</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-01</td>
+            <td>Unknown</td>
+            <td>E SMART  LG-H410</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-01</td>
+            <td>Unknown</td>
+            <td>NURA</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-03</td>
+            <td>Unknown</td>
+            <td>CONNECT 501</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-03</td>
+            <td>Unknown</td>
+            <td>SP50</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-03</td>
+            <td>Unknown</td>
+            <td>BIRDY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-17</td>
+            <td>Unknown</td>
+            <td>L-ELEMENT 400</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-17</td>
+            <td>Unknown</td>
+            <td>KITE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-17</td>
+            <td>Unknown</td>
+            <td>RIFF</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-18</td>
+            <td>Unknown</td>
+            <td>ONE M8</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-18</td>
+            <td>Unknown</td>
+            <td>G FLEX 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-04</td>
+            <td>Unknown</td>
+            <td>TRENDY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-04</td>
+            <td>Unknown</td>
+            <td>S450</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-14</td>
+            <td>Unknown</td>
+            <td>ONE TOUCH 1009X</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-14</td>
+            <td>Unknown</td>
+            <td>SHARK V2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-14</td>
+            <td>Unknown</td>
+            <td>LIFE B2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-14</td>
+            <td>Unknown</td>
+            <td>TROOPER 2 4.5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-14</td>
+            <td>Unknown</td>
+            <td>ST150</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-14</td>
+            <td>Unknown</td>
+            <td>SEREA 50</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-21</td>
+            <td>Unknown</td>
+            <td>L BELLO D331</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-29</td>
+            <td>Unknown</td>
+            <td>B100</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-29</td>
+            <td>Unknown</td>
+            <td>MX4 PRO M462</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-29</td>
+            <td>Unknown</td>
+            <td>YOTAPHONE2 YD201</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-29</td>
+            <td>Unknown</td>
+            <td>ZP530</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-05-19</td>
+            <td>Unknown</td>
+            <td>ONE TOUCH 20.12G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-05-19</td>
+            <td>Unknown</td>
+            <td>STRATRAIL 6 PLUS</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-05-19</td>
+            <td>Unknown</td>
+            <td>ONE M9 - OPJA100</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-05-19</td>
+            <td>Unknown</td>
+            <td>LUMIA 640 - RM-1072</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-05-31</td>
+            <td>Unknown</td>
+            <td>SEREA 60</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-17</td>
+            <td>Unknown</td>
+            <td>G3 S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-17</td>
+            <td>Unknown</td>
+            <td>G4 (H815)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-07</td>
+            <td>Unknown</td>
+            <td>P10</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-07</td>
+            <td>Unknown</td>
+            <td>W200C</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-07-22</td>
+            <td>Unknown</td>
+            <td>50B NEON</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-07-22</td>
+            <td>Unknown</td>
+            <td>50B OXYGEN</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-07-24</td>
+            <td>Unknown</td>
+            <td>LEON TITANE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-07-08</td>
+            <td>Unknown</td>
+            <td>P5004 (MD 98831)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-08-21</td>
+            <td>Unknown</td>
+            <td>PIXI 3</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-08-27</td>
+            <td>Unknown</td>
+            <td>Q4868</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-08-27</td>
+            <td>Unknown</td>
+            <td>HIGHWAY PURE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-09</td>
+            <td>Unknown</td>
+            <td>Minu P123</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-10</td>
+            <td>Unknown</td>
+            <td>RIDGE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-04-10</td>
+            <td>Unknown</td>
+            <td>HIGHWAY SIGNS</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-14</td>
+            <td>Unknown</td>
+            <td>G4 STYLUS (H635)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-10-14</td>
+            <td>Unknown</td>
+            <td>TM600 CRUSOE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-11</td>
+            <td>Unknown</td>
+            <td>E-ZY SMARTPHONE A6</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-03-11</td>
+            <td>Unknown</td>
+            <td>CRYSTAL PRO 4544</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-11</td>
+            <td>Unknown</td>
+            <td>S 168</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-11</td>
+            <td>Unknown</td>
+            <td>DG 300</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2015-06-11</td>
+            <td>Unknown</td>
+            <td>L550</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-26</td>
+            <td>Unknown</td>
+            <td>E50L</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-26</td>
+            <td>Unknown</td>
+            <td>SONIC 3.5S (SM35SH083)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-26</td>
+            <td>Unknown</td>
+            <td>PHANTOM 5 (PRO 5023 PVE03 541)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-26</td>
+            <td>Unknown</td>
+            <td>ANDY 4.5 EL LTE (AM45EL137)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-28</td>
+            <td>Unknown</td>
+            <td>SENIOR MOBILE PHONE O101P</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-29</td>
+            <td>Unknown</td>
+            <td>KONNECT 455</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-01-29</td>
+            <td>Unknown</td>
+            <td>55 PLATINUM</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-23</td>
+            <td>Unknown</td>
+            <td>TABLET PHONE MFS100FR</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-23</td>
+            <td>Unknown</td>
+            <td>LUBI 4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-23</td>
+            <td>Unknown</td>
+            <td>SUNSET 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-24</td>
+            <td>Unknown</td>
+            <td>LUMIA 950</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-24</td>
+            <td>Unknown</td>
+            <td>X1</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-24</td>
+            <td>Unknown</td>
+            <td>K1</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-25</td>
+            <td>Unknown</td>
+            <td>LIQUID Z630</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-25</td>
+            <td>Unknown</td>
+            <td>AQUARIS X5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-03</td>
+            <td>Unknown</td>
+            <td>ITW 4.0 M4029Q</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-03</td>
+            <td>Unknown</td>
+            <td>LUMIA N550 (RM-1127)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-03-03</td>
+            <td>Unknown</td>
+            <td>SPIDER X1</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-03-03</td>
+            <td>Unknown</td>
+            <td>LIFE B1</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-04-20</td>
+            <td>Unknown</td>
+            <td>ENERGY 200</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-04-20</td>
+            <td>Unknown</td>
+            <td>Q6 (M5088)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-04-20</td>
+            <td>Unknown</td>
+            <td>SMARTPHONE 5&#x27;&#x27; M5032-1</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-07-05</td>
+            <td>Unknown</td>
+            <td>TORQUE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-07-05</td>
+            <td>Unknown</td>
+            <td>Smart max 4G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-05-18</td>
+            <td>Unknown</td>
+            <td>L-ITE 552</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-05-24</td>
+            <td>Unknown</td>
+            <td>L52</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-06-17</td>
+            <td>Unknown</td>
+            <td>CLAP</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-06-17</td>
+            <td>Unknown</td>
+            <td>FIRST</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-06-17</td>
+            <td>Unknown</td>
+            <td>SHOCK</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-06-24</td>
+            <td>Unknown</td>
+            <td>X-PERT GEOFFREY 366596</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-19</td>
+            <td>Unknown</td>
+            <td>DOVEO 2.4 REF HY-PROCL5B-001</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-19</td>
+            <td>Unknown</td>
+            <td>FLIP BASIC F220i REF HP01183</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-24</td>
+            <td>Unknown</td>
+            <td>SEREA 62 WHT</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-24</td>
+            <td>Unknown</td>
+            <td>NOTE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-31</td>
+            <td>Unknown</td>
+            <td>G31s</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-31</td>
+            <td>Unknown</td>
+            <td>L-EMENT 501</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-31</td>
+            <td>Unknown</td>
+            <td>LEYTI</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-31</td>
+            <td>Unknown</td>
+            <td>ANDY 4EL2LTE AM4E2L137</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-31</td>
+            <td>Unknown</td>
+            <td>F35 TOUCH MODEL ACF35TCH</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-09</td>
+            <td>Unknown</td>
+            <td>LIQUID Z330</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-09</td>
+            <td>Unknown</td>
+            <td>M2 NOTE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-09</td>
+            <td>Unknown</td>
+            <td>FEVER</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-09-19</td>
+            <td>Unknown</td>
+            <td>G FLEX 2  LG-H955</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-09-27</td>
+            <td>Unknown</td>
+            <td>G5 (H850)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-09-28</td>
+            <td>Unknown</td>
+            <td>LUMIA 650 (RM-1152)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-05-10</td>
+            <td>Unknown</td>
+            <td>BLISS X180</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-05-10</td>
+            <td>Unknown</td>
+            <td>RIFF2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-02-11</td>
+            <td>Unknown</td>
+            <td>DIVE 30 (ZTE BLADE A410)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-11</td>
+            <td>Unknown</td>
+            <td>NEVA 80 (ZTE BLADE V770)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2016-08-11</td>
+            <td>Unknown</td>
+            <td>K4  K120E</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-01</td>
+            <td>Unknown</td>
+            <td>HAPI 50</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-01-26</td>
+            <td>Unknown</td>
+            <td>M270D MAPA</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-01-26</td>
+            <td>Unknown</td>
+            <td>S51HD</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-14</td>
+            <td>Unknown</td>
+            <td>robby</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-14</td>
+            <td>Unknown</td>
+            <td>AXON 7 mini (B2017G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-21</td>
+            <td>Unknown</td>
+            <td>SHINE LITE  (5080X-3DALWE7)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-21</td>
+            <td>Unknown</td>
+            <td>55 COBALT PLUS  (AC55COP)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-21</td>
+            <td>Unknown</td>
+            <td>CLAP2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-21</td>
+            <td>Unknown</td>
+            <td>STYLUS 2  (K520)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-21</td>
+            <td>Unknown</td>
+            <td>SUNNY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-02-21</td>
+            <td>Unknown</td>
+            <td>FREDDY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-03</td>
+            <td>Unknown</td>
+            <td>6030</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-03</td>
+            <td>Unknown</td>
+            <td>RISE 31</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-03</td>
+            <td>Unknown</td>
+            <td>PIXI 4-5&#x27;&#x27;</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-03</td>
+            <td>Unknown</td>
+            <td>PIXI 4-4&#x27;&#x27;</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-03</td>
+            <td>Unknown</td>
+            <td>6530  (DFC-0030)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-03</td>
+            <td>Unknown</td>
+            <td>A PLUS  (A1010a20)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-14</td>
+            <td>Unknown</td>
+            <td>ODYSSEY S1 0951.BO-NN040</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-14</td>
+            <td>Unknown</td>
+            <td>C1</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-14</td>
+            <td>Unknown</td>
+            <td>PIXI 4 - 6&#x27;&#x27;  (9001D)</td>
             <td>부적합</td>
-            <td>2</td>
         </tr>
         
-        <tr>
-            <td>Apple</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-14</td>
+            <td>Unknown</td>
+            <td>PIXI 4 - 6&#x27;&#x27;  (9001D) (MAJ)</td>
             <td>적합</td>
-            <td>34</td>
         </tr>
         
-        <tr>
-            <td>Google</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-16</td>
+            <td>Unknown</td>
+            <td>TREKKER-M1</td>
             <td>적합</td>
-            <td>14</td>
         </tr>
         
-        <tr>
-            <td>Honor</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-16</td>
+            <td>Unknown</td>
+            <td>WOOZE i5.5</td>
             <td>적합</td>
-            <td>31</td>
         </tr>
         
-        <tr>
-            <td>Huawei</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-16</td>
+            <td>Unknown</td>
+            <td>K5  (A602)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-21</td>
+            <td>Unknown</td>
+            <td>F7</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-21</td>
+            <td>Unknown</td>
+            <td>PHAB 2 PRO  ( PB2-690M)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-21</td>
+            <td>Unknown</td>
+            <td>M12</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-21</td>
+            <td>Unknown</td>
+            <td>LONDON</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-04-05</td>
+            <td>Unknown</td>
+            <td>L-EGANT ONE-R</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-04-05</td>
+            <td>Unknown</td>
+            <td>L-ITE 504 HD</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-10-05</td>
+            <td>Unknown</td>
+            <td>T LINK 11</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-06-14</td>
+            <td>Unknown</td>
+            <td>Zenfone Go  (ZB500KL)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-06-28</td>
+            <td>Unknown</td>
+            <td>Key One  PRD-63117-023</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-07</td>
+            <td>Unknown</td>
+            <td>DESIRE 650  (2PYR120)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-07</td>
+            <td>Unknown</td>
+            <td>Zenfone 3 Max  (ZC520TL / ASUS_X008D)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-06-07</td>
+            <td>Unknown</td>
+            <td>POP 4 PLUS (5056D)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-06-07</td>
+            <td>Unknown</td>
+            <td>Q 4400 (874761/TF018E)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-07-15</td>
+            <td>Unknown</td>
+            <td>HAPI 30</td>
             <td>부적합</td>
-            <td>1</td>
         </tr>
         
-        <tr>
-            <td>Huawei</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-03-08</td>
+            <td>Unknown</td>
+            <td>TREKKER-X3</td>
             <td>적합</td>
-            <td>63</td>
         </tr>
         
-        <tr>
-            <td>Motorola</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-06-08</td>
+            <td>Unknown</td>
+            <td>MOON</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-06-08</td>
+            <td>Unknown</td>
+            <td>BLADE A610 PLUS</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-09-14</td>
+            <td>Unknown</td>
+            <td>F23 (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-09-14</td>
+            <td>Unknown</td>
+            <td>F23</td>
             <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-09-20</td>
+            <td>Unknown</td>
+            <td>U5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-10</td>
+            <td>Unknown</td>
+            <td>NEFFOS X1 TP902A</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-10</td>
+            <td>Unknown</td>
+            <td>NEFFOS Y5 TP802A</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-10-10</td>
+            <td>Unknown</td>
+            <td>STAR PLUS (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-10-10</td>
+            <td>Unknown</td>
+            <td>STAR PLUS</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-10-10</td>
+            <td>Unknown</td>
+            <td>TOMMY 2 BOUYGUES TELECOM (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-10-10</td>
+            <td>Unknown</td>
+            <td>TOMMY 2 BOUYGUES TELECOM</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-10-19</td>
+            <td>Unknown</td>
+            <td>G6 (LG-H870)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-01-11</td>
+            <td>Unknown</td>
+            <td>PIANO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-01-11</td>
+            <td>Unknown</td>
+            <td>K6</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2017-05-11</td>
+            <td>Unknown</td>
+            <td>WOOZE i 4.5  (8002506)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-01-02</td>
+            <td>Unknown</td>
+            <td>JERRY 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-01-02</td>
+            <td>Unknown</td>
+            <td>SMARTPHONE 5&quot;&quot; 877947/M5016</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-02-27</td>
+            <td>Unknown</td>
+            <td>ACTION-X3</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-03</td>
+            <td>Unknown</td>
+            <td>ACCESS 50</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-03</td>
+            <td>Unknown</td>
+            <td>ACCESS 50 (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-03</td>
+            <td>Unknown</td>
+            <td>ESSENTIELB WOOZE XL ART. 8003595</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-03</td>
+            <td>Unknown</td>
+            <td>M Bot 60</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-03</td>
+            <td>Unknown</td>
+            <td>M Bot 60 (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-12-03</td>
+            <td>Unknown</td>
+            <td>ESSENTIELB WOOZE L Art : 8003590</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-03-14</td>
+            <td>Unknown</td>
+            <td>ULTIMATE 2.4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-03-14</td>
+            <td>Unknown</td>
+            <td>PRIMO 406</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-03-15</td>
+            <td>Unknown</td>
+            <td>KX-TU329 EXRE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-03-20</td>
+            <td>Unknown</td>
+            <td>HAPI 30 EDITION 2018</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-04</td>
+            <td>Unknown</td>
+            <td>8042 / DSB-0110</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-04</td>
+            <td>Unknown</td>
+            <td>MOTO E4 / XT1762 / M29DA</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-04</td>
+            <td>Unknown</td>
+            <td>SP 402</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-04</td>
+            <td>Unknown</td>
+            <td>VIEW</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-04</td>
+            <td>Unknown</td>
+            <td>VIEW (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-04</td>
+            <td>Unknown</td>
+            <td>L-ITE 506 HD</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-11-04</td>
+            <td>Unknown</td>
+            <td>POWERMAX P550 S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-11-04</td>
+            <td>Unknown</td>
+            <td>SMARTECK K 202</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-23</td>
+            <td>Unknown</td>
+            <td>ORANGE RISE 52 5044 P</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-02-05</td>
+            <td>Unknown</td>
+            <td>HORIZON LITE</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-03-05</td>
+            <td>Unknown</td>
+            <td>S51 GREY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-05-24</td>
+            <td>Unknown</td>
+            <td>ITW 5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-05-30</td>
+            <td>Unknown</td>
+            <td>RISE 33</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-05-31</td>
+            <td>Unknown</td>
+            <td>FAIRPHONE 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-05-31</td>
+            <td>Unknown</td>
+            <td>VIEW 2 W_C800S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-06</td>
+            <td>Unknown</td>
+            <td>2038X</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-06</td>
+            <td>Unknown</td>
+            <td>6050 DFC-0080</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-06-14</td>
+            <td>Unknown</td>
+            <td>LEAP RHD131LW</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-06-14</td>
+            <td>Unknown</td>
+            <td>M250</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-06-14</td>
+            <td>Unknown</td>
+            <td>S8</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-06-20</td>
+            <td>Unknown</td>
+            <td>Call 18</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-17</td>
+            <td>Unknown</td>
+            <td>2051D</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-17</td>
+            <td>Unknown</td>
+            <td>S40</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-17</td>
+            <td>Unknown</td>
+            <td>S60</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-17</td>
+            <td>Unknown</td>
+            <td>Q.4222 (881428/M11C)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-07-17</td>
+            <td>Unknown</td>
+            <td>881424/M11</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-08-08</td>
+            <td>Unknown</td>
+            <td>V9</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-08-08</td>
+            <td>Unknown</td>
+            <td>X4 SOUL MINI S</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-04-09</td>
+            <td>Unknown</td>
+            <td>DIVE 73</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-09-14</td>
+            <td>Unknown</td>
+            <td>HORIZON LITE (MAJ)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-02-10</td>
+            <td>Unknown</td>
+            <td>SX41</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-02-10</td>
+            <td>Unknown</td>
+            <td>8035 DSB-0170</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-10-17</td>
+            <td>Unknown</td>
+            <td>LE POSH 170</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2018-10-23</td>
+            <td>Unknown</td>
+            <td>PLUME L2 SP623</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-02</td>
+            <td>Unknown</td>
+            <td>CORE 60S AC60CRS</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-02</td>
+            <td>Unknown</td>
+            <td>TOMMY 3 W-C201</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-03-21</td>
+            <td>Unknown</td>
+            <td>RIFF 3G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-03-22</td>
+            <td>Unknown</td>
+            <td>ESSENTIELB HE YOU 5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-03-22</td>
+            <td>Unknown</td>
+            <td>CROSSCALL CORE X3</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-04-04</td>
+            <td>Unknown</td>
+            <td>6T (A6013)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-04-04</td>
+            <td>Unknown</td>
+            <td>6T (A6013) (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-09-04</td>
+            <td>Unknown</td>
+            <td>KONNECT 402 BLACK</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-09-04</td>
+            <td>Unknown</td>
+            <td>W55HD - 959244 Black</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-21</td>
+            <td>Unknown</td>
+            <td>S11</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-21</td>
+            <td>Unknown</td>
+            <td>F2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-21</td>
+            <td>Unknown</td>
+            <td>C11</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-21</td>
+            <td>Unknown</td>
+            <td>S41</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-23</td>
+            <td>Unknown</td>
+            <td>TREKKER X4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-11-06</td>
+            <td>Unknown</td>
+            <td>PRO 7  (M792H)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-01-07</td>
+            <td>Unknown</td>
+            <td>LE NUMERO 1 MINI BLEU (16 G0)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-01-07</td>
+            <td>Unknown</td>
+            <td>GS370 PLUS</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-01-07</td>
+            <td>Unknown</td>
+            <td>GS370 PLUS (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-11-07</td>
+            <td>Unknown</td>
+            <td>ACTIVE 2 LTE (201811)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-11-07</td>
+            <td>Unknown</td>
+            <td>3+ (201707)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-07-19</td>
+            <td>Unknown</td>
+            <td>SKW-H0</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-05-09</td>
+            <td>Unknown</td>
+            <td>S42</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-11-09</td>
+            <td>Unknown</td>
+            <td>KING KONG</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-11-09</td>
+            <td>Unknown</td>
+            <td>RAZER PHONE 2 (RZ35-0259)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-09-25</td>
+            <td>Unknown</td>
+            <td>LE HOLA</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-09-25</td>
+            <td>Unknown</td>
+            <td>LE HOLA (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-03-10</td>
+            <td>Unknown</td>
+            <td>NEVA PLAY / BLADE V10 Vita</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-03-10</td>
+            <td>Unknown</td>
+            <td>RISE 54</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2019-08-10</td>
+            <td>Unknown</td>
+            <td>LOGICOM PRIME</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-01-16</td>
+            <td>Unknown</td>
+            <td>VIEW3 PRO  (W-P611)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-01-16</td>
+            <td>Unknown</td>
+            <td>VIEW3 LITE  (W-V800)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-01-23</td>
+            <td>Unknown</td>
+            <td>HAPI 11</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-01-29</td>
+            <td>Unknown</td>
+            <td>NEVA JET 5G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-06-02</td>
+            <td>Unknown</td>
+            <td>DUNE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-06-02</td>
+            <td>Unknown</td>
+            <td>Le Moov 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-06-02</td>
+            <td>Unknown</td>
+            <td>HALO-S</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-25</td>
+            <td>Unknown</td>
+            <td>SPIDER X5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-25</td>
+            <td>Unknown</td>
             <td>3</td>
-        </tr>
-        
-        <tr>
-            <td>Motorola</td>
             <td>적합</td>
-            <td>42</td>
         </tr>
         
-        <tr>
-            <td>Nokia</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-26</td>
+            <td>Unknown</td>
+            <td>7T  (HD1903)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-05-03</td>
+            <td>Unknown</td>
+            <td>7T PRO  (HD1913)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-05-03</td>
+            <td>Unknown</td>
+            <td>ARMOR X6</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-05-03</td>
+            <td>Unknown</td>
+            <td>P30+</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-05-03</td>
+            <td>Unknown</td>
+            <td>P30</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-05-03</td>
+            <td>Unknown</td>
+            <td>M2302</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-06-29</td>
+            <td>Unknown</td>
+            <td>le posh 178</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-06-30</td>
+            <td>Unknown</td>
+            <td>oxygen 68XL / AC68OXXL</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-07</td>
+            <td>Unknown</td>
+            <td>LYNX</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-07</td>
+            <td>Unknown</td>
+            <td>Y80 / W-V720</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-07-22</td>
+            <td>Unknown</td>
+            <td>Y60 - W-K510</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-07-22</td>
+            <td>Unknown</td>
+            <td>WIKO VIEW 4  W-V830</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-11-08</td>
+            <td>Unknown</td>
+            <td>7030 - DFC-0270</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-11-08</td>
+            <td>Unknown</td>
+            <td>Y50  (W-K130)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-08-19</td>
+            <td>Unknown</td>
+            <td>CORE M4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-08-21</td>
+            <td>Unknown</td>
+            <td>S43  (5028Y)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-09</td>
+            <td>Unknown</td>
+            <td>POP</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-02-09</td>
+            <td>Unknown</td>
+            <td>KX-TU466 EXBE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-09</td>
+            <td>Unknown</td>
+            <td>HEYOU 60</td>
             <td>부적합</td>
-            <td>8</td>
         </tr>
         
-        <tr>
-            <td>Nokia</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-09</td>
+            <td>Unknown</td>
+            <td>HEYOU 60 (MAJ)</td>
             <td>적합</td>
-            <td>46</td>
         </tr>
         
-        <tr>
-            <td>OnePlus</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-09</td>
+            <td>Unknown</td>
+            <td>BV 6900</td>
             <td>적합</td>
-            <td>1</td>
         </tr>
         
-        <tr>
-            <td>Oppo</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-09</td>
+            <td>Unknown</td>
+            <td>CORE X4</td>
             <td>적합</td>
-            <td>40</td>
         </tr>
         
-        <tr>
-            <td>Realme</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-09</td>
+            <td>Unknown</td>
+            <td>KONNECT 607</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-15</td>
+            <td>Unknown</td>
+            <td>LE SPARK</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-16</td>
+            <td>Unknown</td>
+            <td>OXYGEN 57  (AC57OX)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-16</td>
+            <td>Unknown</td>
+            <td>1350  (DFB-0120)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-16</td>
+            <td>Unknown</td>
+            <td>SKY 55</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-16</td>
+            <td>Unknown</td>
+            <td>LE FLEEP 178</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-29</td>
+            <td>Unknown</td>
+            <td>View Max W_P200</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-30</td>
+            <td>Unknown</td>
+            <td>RIFF 3 PLUS  (W-B2460)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-09-30</td>
+            <td>Unknown</td>
+            <td>LUBI 5 PLUS  (W-B1860)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-10-15</td>
+            <td>Unknown</td>
+            <td>VIEW 3  (W-P311)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-12-11</td>
+            <td>Unknown</td>
+            <td>HEYOU 40</td>
             <td>부적합</td>
-            <td>1</td>
         </tr>
         
-        <tr>
-            <td>Realme</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2020-12-11</td>
+            <td>Unknown</td>
+            <td>HEYOU 40 (MAJ)</td>
             <td>적합</td>
-            <td>22</td>
         </tr>
         
-        <tr>
-            <td>Samsung</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-21</td>
+            <td>Unknown</td>
+            <td>DIXO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-21</td>
+            <td>Unknown</td>
+            <td>DOLI  V2  (286 510 438)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-21</td>
+            <td>Unknown</td>
+            <td>1 (5033D)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-21</td>
+            <td>Unknown</td>
+            <td>ALTICE S23</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-02-24</td>
+            <td>Unknown</td>
+            <td>Y61  (6 W-K560)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-03-03</td>
+            <td>Unknown</td>
+            <td>Heyou 20  (8008174)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-11-03</td>
+            <td>Unknown</td>
+            <td>VIEW 4 LITE  (W-V730)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-11-03</td>
+            <td>Unknown</td>
+            <td>Y81 / W-V680</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-11-03</td>
+            <td>Unknown</td>
+            <td>NOTE 9S  (M2003J6A1G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>LE CONNECT</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>S440</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>1360  (DFB-0120)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>F300  (W-B2880)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>8050 PLUS  (DSB-0230)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>6060</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-06</td>
+            <td>Unknown</td>
+            <td>INFINITY H30 (HLTE315E)</td>
             <td>부적합</td>
-            <td>3</td>
         </tr>
         
-        <tr>
-            <td>Samsung</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-06</td>
+            <td>Unknown</td>
+            <td>INFINITY H30 (HLTE315E) (MAJ)</td>
             <td>적합</td>
-            <td>159</td>
         </tr>
         
-        <tr>
-            <td>Sony</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-02-06</td>
+            <td>Unknown</td>
+            <td>GX290</td>
             <td>부적합</td>
-            <td>1</td>
         </tr>
         
-        <tr>
-            <td>Sony</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-02-06</td>
+            <td>Unknown</td>
+            <td>GX290 (MAJ)</td>
             <td>적합</td>
-            <td>42</td>
         </tr>
         
-        <tr>
-            <td>Vivo</td>
-            <td>적합</td>
-            <td>17</td>
-        </tr>
-        
-        <tr>
-            <td>Xiaomi</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-12</td>
+            <td>Unknown</td>
+            <td>7 PRO (GM1913)</td>
             <td>부적합</td>
-            <td>7</td>
         </tr>
         
-        <tr>
-            <td>Xiaomi</td>
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-12</td>
+            <td>Unknown</td>
+            <td>7 PRO (GM1913) (MAJ)</td>
             <td>적합</td>
-            <td>46</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-03</td>
+            <td>Unknown</td>
+            <td>Y82 (W-K630)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-03</td>
+            <td>Unknown</td>
+            <td>Y82 (W-K630) (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-20</td>
+            <td>Unknown</td>
+            <td>NOTE 10  (M2103K19G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-21</td>
+            <td>Unknown</td>
+            <td>NOTE 10 PRO  (M2101K6G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-03-11</td>
+            <td>Unknown</td>
+            <td>CORE S4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-03-11</td>
+            <td>Unknown</td>
+            <td>CORE M5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-03-17</td>
+            <td>Unknown</td>
+            <td>10T  (M2007J3SY)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-05-05</td>
+            <td>Unknown</td>
+            <td>VIEW 5  (W-V851)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>9A  (M2006C3LG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>M3  (M2010J19CG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>VIEW 5 PLUS  (W-V850)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-06</td>
+            <td>Unknown</td>
+            <td>S42</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-06</td>
+            <td>Unknown</td>
+            <td>20 SE  (T671H)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-06</td>
+            <td>Unknown</td>
+            <td>11 Lite 5G  (M2101K9G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-19</td>
+            <td>Unknown</td>
+            <td>ROG PHONE 5  (ASUS_I005DA)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>F3  (M2012K11AG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-12</td>
+            <td>Unknown</td>
+            <td>ZENFONE 8</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-10-12</td>
+            <td>Unknown</td>
+            <td>9 PRO 5G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-06</td>
+            <td>Unknown</td>
+            <td>Redmi 9T (M2010J19SY)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-06</td>
+            <td>Unknown</td>
+            <td>Zenfone 7</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-01-06</td>
+            <td>Unknown</td>
+            <td>10SE (T766H)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-02-06</td>
+            <td>Unknown</td>
+            <td>F 200 LS  (W-B2860)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-02-06</td>
+            <td>Unknown</td>
+            <td>GL590</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-02-06</td>
+            <td>Unknown</td>
+            <td>Y51 (W-K211)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-07-22</td>
+            <td>Unknown</td>
+            <td>ULTIMATE 14  (BV5500 PLUS)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-07-22</td>
+            <td>Unknown</td>
+            <td>ULTIMATE 16  (BV9600E)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-09-29</td>
+            <td>Unknown</td>
+            <td>Ultimate 15 (BV5900)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-05-05</td>
+            <td>Unknown</td>
+            <td>NORD  (AC2003)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-05-05</td>
+            <td>Unknown</td>
+            <td>F2 PRO PHANTOM  (M2004J11G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-09-11</td>
+            <td>Unknown</td>
+            <td>Y62  (W-K610)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-11-29</td>
+            <td>Unknown</td>
+            <td>8T  (KB2003)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-04</td>
+            <td>Unknown</td>
+            <td>11  (M2011K2G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>NEVA FIRST</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>11i (M2012K11G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>NOTE 10S  (M2101K7BNY)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>HAPI 12</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>NORD 2 5G  (DN2103)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-08-12</td>
+            <td>Unknown</td>
+            <td>ALC-1-2021  (MODEL-5033Y)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-03</td>
+            <td>Unknown</td>
+            <td>LE SWIPE (MAJ1)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-11-30</td>
+            <td>Unknown</td>
+            <td>20 R  (T767H)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-06-10</td>
+            <td>Unknown</td>
+            <td>POWER U10  (W-V745)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-06-10</td>
+            <td>Unknown</td>
+            <td>POWER U20  (W-V750BN)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-06-10</td>
+            <td>Unknown</td>
+            <td>POWER U30  (W-V755)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-10</td>
+            <td>Unknown</td>
+            <td>10 5G  (M2001J2G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>LE PULSE</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>LE PULSE (MAJ)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>LE PULSE (MAJ)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2021-04-28</td>
+            <td>Unknown</td>
+            <td>LE PULSE (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-03</td>
+            <td>Unknown</td>
+            <td>LE SWIPE</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-03</td>
+            <td>Unknown</td>
+            <td>LE SWIPE (MAJ2)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-24</td>
+            <td>Unknown</td>
+            <td>CLAP 20 + (8008396 / 3026X)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-24</td>
+            <td>Unknown</td>
+            <td>CLAP 20 + (8008396 / 3026X) (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-02-22</td>
+            <td>Unknown</td>
+            <td>10 21061119DG</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-02-22</td>
+            <td>Unknown</td>
+            <td>Ogima</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-03</td>
+            <td>Unknown</td>
+            <td>Y82  W-K630</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-10-03</td>
+            <td>Unknown</td>
+            <td>Le Kay 283 (3G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-15</td>
+            <td>Unknown</td>
+            <td>Le Omega</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-16</td>
+            <td>Unknown</td>
+            <td>20L - ECLIPSE - T774H</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-24</td>
+            <td>Unknown</td>
+            <td>BAR 20XL / 8008397 / 2019G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-03-24</td>
+            <td>Unknown</td>
+            <td>KX-TU456 EXCE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-06-20</td>
+            <td>Unknown</td>
+            <td>DORO 2404  DFC-0130</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-06-20</td>
+            <td>Unknown</td>
+            <td>10C - 220333QNY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-06-20</td>
+            <td>Unknown</td>
+            <td>NOTE11 - 2201117TY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-06-29</td>
+            <td>Unknown</td>
+            <td>NOTE 11 PRO 2201116SG</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-06-29</td>
+            <td>Unknown</td>
+            <td>L-XTREM 28</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-02-08</td>
+            <td>Unknown</td>
+            <td>CORE-X5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-02-08</td>
+            <td>Unknown</td>
+            <td>ACTION-X5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-18</td>
+            <td>Unknown</td>
+            <td>6880 DFC-0390</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-18</td>
+            <td>Unknown</td>
+            <td>X67 503878</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-18</td>
+            <td>Unknown</td>
+            <td>SWEET5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-18</td>
+            <td>Unknown</td>
+            <td>TM350 IZY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-18</td>
+            <td>Unknown</td>
+            <td>KONNECT 34</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-18</td>
+            <td>Unknown</td>
+            <td>BIGO SONO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>A70 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>BV4900 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>CYBER 8</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>SMARTPHONE POCO X4 PRO +  5G    2201116PG</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>SMARTPHONE POCO M4 PRO   2201117PG</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-09-20</td>
+            <td>Unknown</td>
+            <td>Neva Sparkle</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-09-23</td>
+            <td>Unknown</td>
+            <td>30 / T676H</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-09-20</td>
+            <td>Unknown</td>
+            <td>4 5G - FP4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-01-12</td>
+            <td>Unknown</td>
+            <td>SMART 3 - SKU 2516332T</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-11-15</td>
+            <td>Unknown</td>
+            <td>NORD CE 5G EB2103</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>S88 PLUS</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-12-07</td>
+            <td>Unknown</td>
+            <td>SIMPLICITY (V27-LTE)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>SMART 4 (S4)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-03-30</td>
+            <td>Unknown</td>
+            <td>FLOW</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-03-30</td>
+            <td>Unknown</td>
+            <td>FLOW (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-08-31</td>
+            <td>Unknown</td>
+            <td>CYBER 7</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-03-30</td>
+            <td>Unknown</td>
+            <td>6820  (DFC380)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-03-30</td>
+            <td>Unknown</td>
+            <td>REDMI 10A  (220233L2G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-03-30</td>
+            <td>Unknown</td>
+            <td>403  (T431D)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-03-30</td>
+            <td>Unknown</td>
+            <td>3189D</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-15</td>
+            <td>Unknown</td>
+            <td>DFB-0350  (1380)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-15</td>
+            <td>Unknown</td>
+            <td>FIVE</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-15</td>
+            <td>Unknown</td>
+            <td>SMART PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-19</td>
+            <td>Unknown</td>
+            <td>PHONE 1  (A063)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-21</td>
+            <td>Unknown</td>
+            <td>NOTE 12 PRO 5G  (22101316G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-21</td>
+            <td>Unknown</td>
+            <td>NOTE 12 PRO+ 5G  (22101316UG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-19</td>
+            <td>Unknown</td>
+            <td>40SE  (T610K)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-19</td>
+            <td>Unknown</td>
+            <td>REDMI NOTE 12 5G  (22111317G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-19</td>
+            <td>Unknown</td>
+            <td>REDMI A1  (220733SG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>E25</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>F3</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>F4</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>S25</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>HOTAH</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>RG750  (PSM02G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-19</td>
+            <td>Unknown</td>
+            <td>ROG PHONE 07  (ASUS-AI2205-C)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>C20</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>P80</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-10</td>
+            <td>Unknown</td>
+            <td>NOTE 11S 5G  (22031116BG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-20</td>
+            <td>Unknown</td>
+            <td>CORE-Z5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-20</td>
+            <td>Unknown</td>
+            <td>STELLAR-X5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-10-24</td>
+            <td>Unknown</td>
+            <td>X5 5G  (22111317PG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>Air1 Ultra+</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-02-08</td>
+            <td>Unknown</td>
+            <td>DISCOVERY</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-02-08</td>
+            <td>Unknown</td>
+            <td>DISCOVERY (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>M5  (22071219CG)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-07-12</td>
+            <td>Unknown</td>
+            <td>F3 PRO 5G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-07-12</td>
+            <td>Unknown</td>
+            <td>X4 GT  (22041216G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-07-12</td>
+            <td>Unknown</td>
+            <td>Phone (2)  (A065)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-12-19</td>
+            <td>Unknown</td>
+            <td>F4 GT  (21121210G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2022-07-12</td>
+            <td>Unknown</td>
+            <td>SIMPLICITY (V27-LTE) (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-07</td>
+            <td>Unknown</td>
+            <td>ET45CA</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-06-07</td>
+            <td>Unknown</td>
+            <td>ET45CA (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-19</td>
+            <td>Unknown</td>
+            <td>TAB P11 (TB-J607Z)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-19</td>
+            <td>Unknown</td>
+            <td>TAB P11 (TB-J607Z) (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>N50</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>S100 PRO</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>C80</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-03-20</td>
+            <td>Unknown</td>
+            <td>8100 PLUS (DSB-0400)</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-03-20</td>
+            <td>Unknown</td>
+            <td>8100 PLUS (DSB-0400)(MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-02-04</td>
+            <td>Unknown</td>
+            <td>NOTE 13  (23124RA7EO)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-02-04</td>
+            <td>Unknown</td>
+            <td>NOTE 13 PRO 5G  (2312DRA50G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-02-04</td>
+            <td>Unknown</td>
+            <td>S70 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-02-04</td>
+            <td>Unknown</td>
+            <td>A52 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-03-27</td>
+            <td>Unknown</td>
+            <td>5 FP5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-03-27</td>
+            <td>Unknown</td>
+            <td>XTREM 40</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-03-27</td>
+            <td>Unknown</td>
+            <td>XTREM 40 Pro</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-15</td>
+            <td>Unknown</td>
+            <td>LE WAVE 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-05-22</td>
+            <td>Unknown</td>
+            <td>TW5P  (T48)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-05-22</td>
+            <td>Unknown</td>
+            <td>TW7R  (T2)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-16</td>
+            <td>Unknown</td>
+            <td>S34</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-16</td>
+            <td>Unknown</td>
+            <td>S35</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-30</td>
+            <td>Unknown</td>
+            <td>Q1-22  (QT22101B / ES1058) </td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-30</td>
+            <td>Unknown</td>
+            <td>Q3-24  (QT23126BP / ES400) </td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-12-16</td>
+            <td>Unknown</td>
+            <td>DSLIDE-114</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-12-16</td>
+            <td>Unknown</td>
+            <td>DSLIDE-1025</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>NOTE 16 PRO</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2023-09-22</td>
+            <td>Unknown</td>
+            <td>WP28</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-08-10</td>
+            <td>Unknown</td>
+            <td>CORE S5</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-08-10</td>
+            <td>Unknown</td>
+            <td>CORE S5 (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-11-25</td>
+            <td>Unknown</td>
+            <td>STELLAR M6</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-23</td>
+            <td>Unknown</td>
+            <td>Classic A10</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-05-06</td>
+            <td>Unknown</td>
+            <td>C65  (2310FPCA4G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-05-06</td>
+            <td>Unknown</td>
+            <td>C53</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-16</td>
+            <td>Unknown</td>
+            <td>B2 Ultra</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-17</td>
+            <td>Unknown</td>
+            <td>FLAT 1C</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-17</td>
+            <td>Unknown</td>
+            <td>WAVE 6C</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-15</td>
+            <td>Unknown</td>
+            <td>C1+</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-23</td>
+            <td>Unknown</td>
+            <td>CYBER 15</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-12-11</td>
+            <td>Unknown</td>
+            <td>DISCOVERY 2 ME (25246256D)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-11-28</td>
+            <td>Unknown</td>
+            <td>NORD 4  (CPH2663)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-11-28</td>
+            <td>Unknown</td>
+            <td>M6 PRO  (2312FPCA6G)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-15</td>
+            <td>Unknown</td>
+            <td>ZENFONE 11 ULTRA  (ASUS_AI2401_H)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-14</td>
+            <td>Unknown</td>
+            <td>IDEA PAD 3 17ALC6</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-12-16</td>
+            <td>Unknown</td>
+            <td>KONNECT-557</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-04-02</td>
+            <td>Unknown</td>
+            <td>X98</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-02-20</td>
+            <td>Unknown</td>
+            <td>SHARK 8</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-02-20</td>
+            <td>Unknown</td>
+            <td>SHARK 8 (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-23</td>
+            <td>Unknown</td>
+            <td>WP36</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-23</td>
+            <td>Unknown</td>
+            <td>WP36 (MAJ)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-23</td>
+            <td>Unknown</td>
+            <td>F105</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2024-10-23</td>
+            <td>Unknown</td>
+            <td>NOTE 13</td>
+            <td>부적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-09-01</td>
+            <td>Unknown</td>
+            <td>Latitude 5450 XCTO P165G</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-10-04</td>
+            <td>Unknown</td>
+            <td>REDMI A3  (23129RN51X)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-10-04</td>
+            <td>Unknown</td>
+            <td>F106 Pro</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-10-04</td>
+            <td>Unknown</td>
+            <td>XS15</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-10-04</td>
+            <td>Unknown</td>
+            <td>POLARIS  (SKU 2334N)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-10-04</td>
+            <td>Unknown</td>
+            <td>KING KONG 8</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-24</td>
+            <td>Unknown</td>
+            <td>ICONIA V11-11-88NY A24005</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-24</td>
+            <td>Unknown</td>
+            <td>TAB STAND PRO 2</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>Y8</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>NOTE 20 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>TK707</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>G9A</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>F101 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>M15 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>FLAT 2C</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>C58</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>A07</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>TIGER 10</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-04-29</td>
+            <td>Unknown</td>
+            <td>C57 PRO</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-05-14</td>
+            <td>Unknown</td>
+            <td>DBOOK 141C</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-05-14</td>
+            <td>Unknown</td>
+            <td>KONNECT-35</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-05-22</td>
+            <td>Unknown</td>
+            <td>1880  (DFB-0460 )</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-12-06</td>
+            <td>Unknown</td>
+            <td>T101 FHD2 WIFI  (ACT101FHD2WF)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-12-06</td>
+            <td>Unknown</td>
+            <td>PHONE (2A) PLUS  (A142P)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-12-06</td>
+            <td>Unknown</td>
+            <td>EZY</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-12-06</td>
+            <td>Unknown</td>
+            <td>BARBIE PHONE  (TA-1681)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-06-26</td>
+            <td>Unknown</td>
+            <td>LEVA L30  (DFC-0530)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-06-26</td>
+            <td>Unknown</td>
+            <td>F5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-06-26</td>
+            <td>Unknown</td>
+            <td>S26</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-06-26</td>
+            <td>Unknown</td>
+            <td>AURORA A30  (DSB-0560)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-06-26</td>
+            <td>Unknown</td>
+            <td>X5</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-02-07</td>
+            <td>Unknown</td>
+            <td>A5  (25028RN03Y)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-02-07</td>
+            <td>Unknown</td>
+            <td>2800  (DFC-0470)</td>
+            <td>적합</td>
+        </tr>
+        
+        <tr class="updated">
+            <td>🔥</td>
+            <td>2025-02-07</td>
+            <td>Unknown</td>
+            <td>AERO</td>
+            <td>적합</td>
         </tr>
         
     </table>
