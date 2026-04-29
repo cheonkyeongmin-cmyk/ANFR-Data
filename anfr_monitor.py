@@ -286,11 +286,20 @@ def send_ntfy(current_df, updated_df, first_run):
 실행시각: {now_text}
 """
 
-    try:
-        r = requests.post(NTFY_URL, data=msg.encode("utf-8"), timeout=30)
-        print("ntfy status:", r.status_code)
-    except Exception as e:
-        print("ntfy 전송 실패:", e)
+try:
+    r = requests.post(
+        "https://ntfy.sh/peter-anfr-data-daily-noti",
+        data=msg.encode("utf-8"),
+        headers={
+            "Title": "ANFR Daily Monitor",
+            "Content-Type": "text/plain; charset=utf-8"
+        },
+        timeout=30
+    )
+    print("ntfy status:", r.status_code)
+    print("ntfy response:", r.text)
+except Exception as e:
+    print("ntfy 전송 실패:", e)
 
 
 # ==========================
