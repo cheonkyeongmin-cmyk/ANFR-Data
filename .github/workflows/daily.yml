@@ -2,11 +2,11 @@ name: ANFR Daily Monitor
 
 on:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "0 22 * * *"   # KST 오전 7시
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+permissions:
+  contents: write
 
 jobs:
   run:
@@ -37,3 +37,11 @@ jobs:
         with:
           name: anfr-report
           path: report.html
+
+      - name: 변경 데이터 저장
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add previous_data.csv report.html
+          git commit -m "Update ANFR daily data" || echo "No changes to commit"
+          git push
