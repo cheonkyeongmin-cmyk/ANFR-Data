@@ -15,13 +15,14 @@ DATASET = "das-telephonie-mobile"
 PREVIOUS_FILE = "previous_data.csv"
 REPORT_FILE = "report.html"
 
-# ntfy 토픽 고정
 NTFY_TOPIC = "peter-anfr-data-daily-noti"
 NTFY_URL = f"https://ntfy.sh/{NTFY_TOPIC}"
 
 KST = timezone(timedelta(hours=9))
 today = datetime.now(KST).date()
 now_text = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST")
+
+TARGET_BRANDS = ["Samsung", "Apple", "Xiaomi", "Oppo", "Huawei"]
 
 BRANDS = {
     "samsung": "Samsung",
@@ -39,6 +40,7 @@ BRANDS = {
     "vivo": "Vivo",
     "nokia": "Nokia",
 }
+
 
 # ==========================
 # 데이터 가져오기
@@ -84,7 +86,7 @@ def fetch_data():
 
 
 # ==========================
-# 컬럼 찾기
+# 공통 함수
 # ==========================
 def find_col(df, keywords):
     for col in df.columns:
@@ -94,9 +96,6 @@ def find_col(df, keywords):
     return None
 
 
-# ==========================
-# 브랜드 / 상태 감지
-# ==========================
 def detect_brand(row):
     text = " ".join([str(x).lower() for x in row.values])
     for k, v in BRANDS.items():
@@ -122,10 +121,87 @@ def make_hash(row):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def signed_num(n):
+    if n > 0:
+        return f"+{n}"
+    return str(n)
+
+
 # ==========================
-# HTML 테이블 생성
+# 요약 계산
 # ==========================
-def make_rows(df):
+def calc_counts(df):
+    total = len(df)
+    ok = len(df[df["status"] == "적합"])
+    nok = len(df[df["status"] == "부적합"])
+    unknown = len(df[df["status"] == "확인필요"])
+    return {
+        "total": total,
+        "ok": ok,
+        "nok": nok,
+        "unknown": unknown,
+    }
+
+
+def build_summary(current_df, old_df=None):
+    rows = []
+
+    groups = [("전체", current_df)]
+
+    for brand in TARGET_BRANDS:
+        groups.append((brand, current_df[current_df["brand"] == brand]))
+
+    for name, sub_df in groups:
+        cur = calc_counts(sub_df)
+
+        if old_df is not None and not old_df.empty:
+            if name == "전체":
+                old_sub = old_df
+            else:
+                old_sub = old_df[old_df["brand"] == name]
+
+            old = calc_counts(old_sub)
+        else:
+            old = {"total": 0, "ok": 0, "nok": 0, "unknown": 0}
+
+        rows.append({
+            "name": name,
+            "total": cur["total"],
+            "ok": cur["ok"],
+            "nok": cur["nok"],
+            "unknown": cur["unknown"],
+            "delta_total": cur["total"] - old["total"],
+            "delta_ok": cur["ok"] - old["ok"],
+            "delta_nok": cur["nok"] - old["nok"],
+            "delta_unknown": cur["unknown"] - old["unknown"],
+        })
+
+    return rows
+
+
+def make_summary_html(summary_rows):
+    html_rows = ""
+
+    for r in summary_rows:
+        hot = " class='hot'" if r["delta_total"] != 0 or r["delta_nok"] != 0 else ""
+
+        html_rows += f"""
+        <tr{hot}>
+            <td><b>{html.escape(str(r["name"]))}</b></td>
+            <td>{r["total"]} <span class="delta">({signed_num(r["delta_total"])})</span></td>
+            <td>{r["ok"]} <span class="delta">({signed_num(r["delta_ok"])})</span></td>
+            <td>{r["nok"]} <span class="delta danger">({signed_num(r["delta_nok"])})</span></td>
+            <td>{r["unknown"]} <span class="delta">({signed_num(r["delta_unknown"])})</span></td>
+        </tr>
+        """
+
+    return html_rows
+
+
+# ==========================
+# 업데이트 테이블
+# ==========================
+def make_update_rows(df):
     if df.empty:
         return """
         <tr>
@@ -136,12 +212,12 @@ def make_rows(df):
     rows = ""
     for _, r in df.iterrows():
         rows += f"""
-        <tr style="background:#fff2a8;">
+        <tr class="updated">
+            <td>🔥</td>
             <td>{html.escape(str(r.get("date", "")))}</td>
             <td>{html.escape(str(r.get("brand", "")))}</td>
             <td>{html.escape(str(r.get("model", "")))}</td>
             <td>{html.escape(str(r.get("status", "")))}</td>
-            <td>{html.escape(str(r.get("raw_key", "")))[:16]}</td>
         </tr>
         """
     return rows
@@ -150,7 +226,10 @@ def make_rows(df):
 # ==========================
 # HTML 리포트 저장
 # ==========================
-def save_report(current_df, updated_df, first_run):
+def save_report(current_df, old_df, updated_df, first_run):
+    summary_rows = build_summary(current_df, old_df)
+    summary_html = make_summary_html(summary_rows)
+
     if first_run:
         title = "ANFR 기준 데이터 생성"
         message = "첫 실행이므로 기존 비교 데이터가 없습니다. 오늘 조회한 데이터를 기준 데이터로 저장했습니다."
@@ -158,28 +237,8 @@ def save_report(current_df, updated_df, first_run):
         title = "ANFR 업데이트 없음"
         message = "기존 저장 데이터와 비교한 결과 신규/변경 항목이 없습니다."
     else:
-        title = "ANFR 업데이트 있음"
+        title = "🔥 ANFR 업데이트 있음"
         message = f"신규/변경 항목 {len(updated_df)}건이 확인되었습니다."
-
-    if not current_df.empty:
-        brand_summary = (
-            current_df.groupby(["brand", "status"])
-            .size()
-            .reset_index(name="count")
-            .sort_values(["brand", "status"])
-        )
-    else:
-        brand_summary = pd.DataFrame(columns=["brand", "status", "count"])
-
-    summary_rows = ""
-    for _, r in brand_summary.iterrows():
-        summary_rows += f"""
-        <tr>
-            <td>{html.escape(str(r["brand"]))}</td>
-            <td>{html.escape(str(r["status"]))}</td>
-            <td>{html.escape(str(r["count"]))}</td>
-        </tr>
-        """
 
     report = f"""<!DOCTYPE html>
 <html lang="ko">
@@ -191,6 +250,7 @@ def save_report(current_df, updated_df, first_run):
             font-family: Arial, "Malgun Gothic", sans-serif;
             margin: 24px;
             line-height: 1.5;
+            color: #222;
         }}
         h2 {{
             margin-bottom: 12px;
@@ -205,6 +265,7 @@ def save_report(current_df, updated_df, first_run):
             border: 1px solid #ccc;
             padding: 8px;
             font-size: 14px;
+            text-align: center;
         }}
         th {{
             background: #f2f2f2;
@@ -215,6 +276,26 @@ def save_report(current_df, updated_df, first_run):
             border: 1px solid #ddd;
             margin-bottom: 20px;
         }}
+        .updated {{
+            background: #fff2a8;
+            font-weight: bold;
+        }}
+        .hot {{
+            background: #fff7d6;
+            font-weight: bold;
+        }}
+        .delta {{
+            color: #555;
+            font-size: 12px;
+        }}
+        .danger {{
+            color: #d00000;
+            font-weight: bold;
+        }}
+        .note {{
+            color: #666;
+            font-size: 13px;
+        }}
     </style>
 </head>
 <body>
@@ -222,31 +303,34 @@ def save_report(current_df, updated_df, first_run):
 
     <div class="box">
         <p><b>실행 시각:</b> {now_text}</p>
-        <p><b>전체 확인 건수:</b> {len(current_df)}</p>
-        <p><b>신규/변경 건수:</b> {len(updated_df)}</p>
+        <p><b>현재 전체 데이터:</b> {len(current_df)}건</p>
+        <p><b>신규/변경 건수:</b> {len(updated_df)}건</p>
         <p>{message}</p>
+        <p class="note">괄호 안 숫자는 previous_data.csv 기준 어제 대비 증감입니다.</p>
     </div>
 
-    <h3>신규/변경 항목</h3>
+    <h3>📈 요약 현황</h3>
     <table>
         <tr>
+            <th>구분</th>
+            <th>전체 건수</th>
+            <th>적합</th>
+            <th>부적합</th>
+            <th>확인필요</th>
+        </tr>
+        {summary_html}
+    </table>
+
+    <h3>🔥 신규/변경 업데이트 항목</h3>
+    <table>
+        <tr>
+            <th>표시</th>
             <th>Date</th>
             <th>Brand</th>
             <th>Model</th>
             <th>Status</th>
-            <th>Key</th>
         </tr>
-        {make_rows(updated_df)}
-    </table>
-
-    <h3>현재 데이터 요약</h3>
-    <table>
-        <tr>
-            <th>Brand</th>
-            <th>Status</th>
-            <th>Count</th>
-        </tr>
-        {summary_rows}
+        {make_update_rows(updated_df)}
     </table>
 </body>
 </html>
@@ -259,35 +343,48 @@ def save_report(current_df, updated_df, first_run):
 # ==========================
 # ntfy 알림
 # ==========================
-def send_ntfy(current_df, updated_df, first_run):
+def send_ntfy(current_df, old_df, updated_df, first_run):
+    summary_rows = build_summary(current_df, old_df)
+
+    summary_text = ""
+    for r in summary_rows:
+        summary_text += (
+            f"{r['name']}: 총 {r['total']}({signed_num(r['delta_total'])}), "
+            f"적합 {r['ok']}({signed_num(r['delta_ok'])}), "
+            f"부적합 {r['nok']}({signed_num(r['delta_nok'])})\n"
+        )
+
     if first_run:
+        title = "ANFR 기준 데이터 생성"
         msg = f"""[ANFR] 기준 데이터 생성
 
 첫 실행으로 비교 대상이 없습니다.
-현재 데이터: {len(current_df)}건
+
+{summary_text}
 실행시각: {now_text}
 """
     elif updated_df.empty:
+        title = "ANFR 업데이트 없음"
         msg = f"""[ANFR] 업데이트 없음
 
-현재 데이터: {len(current_df)}건
+신규/변경 항목이 없습니다.
+
+{summary_text}
 실행시각: {now_text}
 """
     else:
+        title = "ANFR 업데이트 있음"
         top_items = ""
         for _, r in updated_df.head(10).iterrows():
-            top_items += (
-                f"- {r.get('brand')} / "
-                f"{r.get('model')} / "
-                f"{r.get('status')} / "
-                f"{r.get('date')}\n"
-            )
+            top_items += f"- {r.get('brand')} / {r.get('model')} / {r.get('status')} / {r.get('date')}\n"
 
-        msg = f"""[ANFR] 업데이트 있음
+        msg = f"""[ANFR] 업데이트 있음 🔥
 
 신규/변경: {len(updated_df)}건
-현재 데이터: {len(current_df)}건
 
+{summary_text}
+
+상위 업데이트:
 {top_items}
 실행시각: {now_text}
 """
@@ -300,7 +397,7 @@ def send_ntfy(current_df, updated_df, first_run):
             NTFY_URL,
             data=msg.encode("utf-8"),
             headers={
-                "Title": "ANFR Daily Monitor",
+                "Title": title,
                 "Content-Type": "text/plain; charset=utf-8",
                 "Tags": "satellite",
             },
@@ -328,14 +425,14 @@ def main():
     print("원본 데이터:", len(df))
     print("원본 컬럼:", list(df.columns))
 
-    brand_col = find_col(df, ["marque", "brand"])
     model_col = find_col(df, ["modele", "model", "nom"])
     date_col = find_col(df, ["date"])
-    status_col = find_col(df, ["conform"])
 
-    print("탐지 컬럼:", brand_col, model_col, date_col, status_col)
+    print("탐지 컬럼:", model_col, date_col)
 
     df["brand"] = df.apply(detect_brand, axis=1)
+    df["brand"] = df["brand"].fillna("Unknown")
+
     df["status"] = df.apply(detect_status, axis=1)
 
     if date_col:
@@ -350,22 +447,23 @@ def main():
 
     df["raw_key"] = df.apply(make_hash, axis=1)
 
-    current_df = df[df["brand"].notna()].copy()
-    current_df = current_df[["raw_key", "date", "brand", "model", "status"]]
+    current_df = df[["raw_key", "date", "brand", "model", "status"]].copy()
     current_df = current_df.drop_duplicates()
 
-    print("브랜드 필터 후:", len(current_df))
+    print("현재 데이터:", len(current_df))
 
     first_run = not os.path.exists(PREVIOUS_FILE)
 
     if first_run:
         print("previous_data.csv 없음. 첫 실행으로 판단합니다.")
+        old_df = pd.DataFrame(columns=current_df.columns)
         updated_df = pd.DataFrame(columns=current_df.columns)
     else:
         old_df = pd.read_csv(PREVIOUS_FILE, dtype=str)
 
         if "raw_key" not in old_df.columns:
             print("기존 previous_data.csv에 raw_key 없음. 기준 데이터 재생성.")
+            old_df = pd.DataFrame(columns=current_df.columns)
             updated_df = pd.DataFrame(columns=current_df.columns)
             first_run = True
         else:
@@ -376,8 +474,8 @@ def main():
 
     print("업데이트 건수:", len(updated_df))
 
-    save_report(current_df, updated_df, first_run)
-    send_ntfy(current_df, updated_df, first_run)
+    save_report(current_df, old_df, updated_df, first_run)
+    send_ntfy(current_df, old_df, updated_df, first_run)
 
     current_df.to_csv(PREVIOUS_FILE, index=False, encoding="utf-8-sig")
 
