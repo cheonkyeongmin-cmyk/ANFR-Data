@@ -344,74 +344,47 @@ def save_report(current_df, old_df, updated_df, first_run):
 # ntfy 알림
 # ==========================
 def send_ntfy(current_df, old_df, updated_df, first_run):
-    summary_rows = build_summary(current_df, old_df)
-
-    summary_text = ""
-    for r in summary_rows:
-        summary_text += (
-            f"{r['name']}: 총 {r['total']}({signed_num(r['delta_total'])}), "
-            f"적합 {r['ok']}({signed_num(r['delta_ok'])}), "
-            f"부적합 {r['nok']}({signed_num(r['delta_nok'])})\n"
-        )
-
-    if first_run:
-        title = "ANFR 기준 데이터 생성"
-        msg = f"""[ANFR] 기준 데이터 생성
-
-첫 실행으로 비교 대상이 없습니다.
-
-{summary_text}
-실행시각: {now_text}
-"""
-    elif updated_df.empty:
-        title = "ANFR 업데이트 없음"
-        msg = f"""[ANFR] 업데이트 없음
-
-신규/변경 항목이 없습니다.
-
-{summary_text}
-실행시각: {now_text}
-"""
-    else:
-        title = "ANFR 업데이트 있음"
-        top_items = ""
-        for _, r in updated_df.head(10).iterrows():
-            top_items += f"- {r.get('brand')} / {r.get('model')} / {r.get('status')} / {r.get('date')}\n"
-
-        msg = f"""[ANFR] 업데이트 있음 🔥
-
-신규/변경: {len(updated_df)}건
-
-{summary_text}
-
-상위 업데이트:
-{top_items}
-실행시각: {now_text}
-"""
-
-    print("NTFY_TOPIC:", NTFY_TOPIC)
-    print("NTFY_URL:", NTFY_URL)
-
     try:
+        print("===== NTFY DEBUG START =====")
+
+        summary_rows = build_summary(current_df, old_df)
+
+        summary_text = ""
+        for r in summary_rows:
+            summary_text += (
+                f"{r['name']}: 총 {r['total']}({signed_num(r['delta_total'])}), "
+                f"적합 {r['ok']}({signed_num(r['delta_ok'])}), "
+                f"부적합 {r['nok']}({signed_num(r['delta_nok'])})\n"
+            )
+
+        print("summary_text OK")
+
+        if first_run:
+            msg = f"[ANFR] 첫 실행\n\n{summary_text}"
+        elif updated_df.empty:
+            msg = f"[ANFR] 업데이트 없음\n\n{summary_text}"
+        else:
+            msg = f"[ANFR] 업데이트 있음 ({len(updated_df)}건)\n\n{summary_text}"
+
+        print("message 생성 OK")
+
         r = requests.post(
             NTFY_URL,
             data=msg.encode("utf-8"),
             headers={
-                "Title": title,
-                "Content-Type": "text/plain; charset=utf-8",
-                "Tags": "satellite",
+                "Title": "ANFR Monitor",
+                "Content-Type": "text/plain; charset=utf-8"
             },
             timeout=30,
         )
 
         print("ntfy status:", r.status_code)
         print("ntfy response:", r.text)
-
-        if r.status_code >= 400:
-            raise Exception(f"ntfy 전송 실패: {r.status_code} / {r.text}")
+        print("===== NTFY DEBUG END =====")
 
     except Exception as e:
-        print("ntfy 전송 실패:", e)
+        print("🔥🔥🔥 NTFY 전체 실패:", str(e))
+        raise   # ← 이거 중요 (실패하면 workflow도 실패하게)
 
 
 # ==========================
