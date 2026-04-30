@@ -2,8 +2,8 @@ name: ANFR Daily Monitor
 
 on:
   schedule:
-    - cron: "0 22 * * *"   # KST 오전 7시
-  workflow_dispatch:
+    - cron: "30 21 * * *"   # 21:30 UTC = 약 07:00 KST (지연 여유 포함)
+  workflow_dispatch:        # 수동 실행 버튼 (테스트용)
 
 permissions:
   contents: write
